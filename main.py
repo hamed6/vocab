@@ -11,7 +11,7 @@ wb=opxl.load_workbook('Book.xlsx')
 ws=wb['Sheet1']
 # c=ws['A1':'A4']
 # print(wb['A1'.value])
-
+# read
 for row in ws.iter_rows():
     for cell in row:
         print(cell.value)
