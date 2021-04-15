@@ -12,6 +12,18 @@ ws=wb['Sheet1']
 # c=ws['A1':'A4']
 # print(wb['A1'.value])
 # read
-for row in ws.iter_rows():
-    for cell in row:
-        print(cell.value)
+counter = 0
+colNumber=ws.max_column
+
+while counter<10:        
+    for row in ws.iter_cols( min_col=colNumber, max_col=colNumber):
+        for cell in row:
+            if ( cell.value != None):
+                word='A'+str(cell.row)  
+               
+                print(counter, ': ', ws[word].value)
+                counter+=1     
+    colNumber-=1
+    if (colNumber==1):
+        break
+    
